@@ -1,4 +1,4 @@
-# scArches Container
+# pytorch Container
 
 Docker/Singularity image to run [pytorch](https://pytorch.org/) on Centos 6.9 kernel (Ubuntu 16.04) with GPU support.
 
@@ -8,7 +8,13 @@ If you have used this work for a publication, you must acknowledge SIH, e.g: "Th
 
 # Quickstart for Artemis
 
-Put it on Artemis then modify the `run_artemis.pbs` script and launch with `qsub run_artemis.pbs`.
+Put this repo on Artemis e.g.
+
+```
+cd /project/<YOUR_PROJECT>
+git clone https://github.com/Sydney-Informatics-Hub/pytorch-contained.git
+```
+Then `cd pytorch-contained` and modify the `run_artemis.pbs` script and launch with `qsub run_artemis.pbs`.
 
 Otherwise here are the full instructions for getting there....
 
