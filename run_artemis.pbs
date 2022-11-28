@@ -12,13 +12,8 @@ cd $PBS_O_WORKDIR
 export SINGLUARITY_CACHEDIR=`pwd`
 export SINGLUARITY_TMPDIR=`pwd`
 
-singularity build scarches.img docker://nbutter/scarches:ubuntu1604
+singularity build pytorch.img docker://nbutter/pytorch:ubuntu1604
 
 ### 2 EXAMPLE WORKFLOW ###
-# Download the example dataset, this one-liner should do it:
-wget --load-cookies ./cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies ./cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1ehxgfHTsMZXy6YzlFKGJOsBKQ5rrvMnd' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1ehxgfHTsMZXy6YzlFKGJOsBKQ5rrvMnd" -O pancreas_normalized.h5ad && rm -rf ./cookies.txt
-
-#Otherwise visit the google download link: https://drive.google.com/u/0/uc?id=1ehxgfHTsMZXy6YzlFKGJOsBKQ5rrvMnd&export=download
-
-# Remove the build commands above and execute
-singularity run --nv --bind /project:/project scarches.img /bin/bash -c "cd "$PBS_O_WORKDIR" && python example_Unsupervised_surgery_pipeline_with_SCVI.py"
+# Remove the build commands above and execute:
+singularity run --nv --bind /project:/project pytorch.img /bin/bash -c "cd "$PBS_O_WORKDIR" && python example_run.py"
