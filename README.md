@@ -43,8 +43,8 @@ See the repo at [https://hub.docker.com/r/nbutter/pytorch](https://hub.docker.co
 
 ## Build with singularity
 ```
-export SINGLUARITY_CACHEDIR=`pwd`
-export SINGLUARITY_TMPDIR=`pwd`
+export SINGULARITY_CACHEDIR=`pwd`
+export SINGULARITY_TMPDIR=`pwd`
 
 singularity build scarches.img docker://nbutter/pytorch:ubuntu1604
 ```
